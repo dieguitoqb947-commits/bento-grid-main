@@ -222,62 +222,93 @@ body {
     margin: 0 auto;
     padding: 40px;
     gap: 24px;
-
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-
-    /* 🔥 clave: creamos suficientes filas */
-    grid-template-rows: repeat(6, 120px);
+    grid-template-columns: repeat(4, minmax(150px, 250px));
+    grid-template-rows: repeat(4, minmax(150px, auto));
   }
 
-  /* reset(lo puedes dejar) */
   .item-grid {
     border-radius: 16px;
     padding: 20px;
   }
 
-  /* 📌 COLUMNA 1 (tu duda del 50%) */
   .section__1 {
     grid-column: 1;
-    grid-row: 1 / 3; /* mitad superior */
+    grid-row: 1 / span 3;
+    margin-bottom: 75%;
+    padding-left: 25px;
+  }
+
+  .section__1--title {
+    font-size: 2rem;
+  }
+
+  .section__1--img {
+    width: 100%;
   }
 
   .section__4 {
     grid-column: 1;
-    grid-row: 3 / 5; /* mitad inferior */
+    grid-row: 3 / span 2;
+    margin-top: 50%;
   }
 
-  /* 📌 COLUMNA 2 (centro) */
   .section__2 {
-    grid-column: 2;
-    grid-row: 1 / 3; /* bloque grande arriba */
+    grid-column: 2 / span 2;
+    grid-row: 1 / 3;
+    justify-content: center;
+  }
+
+  .section__2--title {
+    max-width: 400px;
+  }
+
+  .section__2--img {
+    max-width: 50%;
   }
 
   .section__5 {
     grid-column: 2;
-    grid-row: 3 / 4;
+    grid-row: 3;
   }
 
   .section__6 {
-    grid-column: 2;
-    grid-row: 3 / 4;
-    margin-left: 50%; /* simula 2 columnas internas */
+    grid-column: 3;
+    grid-row: 3;
   }
 
   .section__7 {
     grid-column: 2;
-    grid-row: 4 / 5;
+    grid-row: 4;
   }
 
   .section__8 {
-    grid-column: 2;
-    grid-row: 4 / 6;
-    margin-left: 50%;
+    grid-column: 3 / span 2;
+    grid-row: 4;
   }
 
-  /* 📌 COLUMNA 3 */
   .section__3 {
-    grid-column: 3;
-    grid-row: 1 / 5; /* bloque alto */
+    grid-column: 4;
+    grid-row: 1 / span 3;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0 0 20px;
+    overflow: hidden;
+  }
+  .section__3--title {
+    text-align: left;
+  }
+
+  .section__3--img-wrapper {
+    width: 330px;
+  }
+  .section__3--img {
+    width: 100%;
+  }
+  .section__3--subtitle {
+    text-align: left;
+    font-size: 1.2rem;
+    padding-right: 20px;
+    padding-top: 15px;
   }
 }
